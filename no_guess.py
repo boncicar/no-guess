@@ -3,12 +3,17 @@
 # 猜對的話印出'終於猜對了'
 # 猜錯的話要提示比答案大或小
 # 2nd version添加count'你現在猜了幾次' (count = 0不能寫在while True否則永遠都是猜了0次)
+# 3rd version改成讓使用者自訂數字範圍
 
 import random
-r = random.randint(1, 100)
+start = input('請輸入隨機整數範圍起始值: ')
+end = input('請輸入隨機整數範圍結束值: ')
+start = int(start)
+end = int(end)
+r = random.randint(start, end)
 count = 0
 while True:
-	num = input('請猜1到100之間一個數字: ')
+	num = input('請猜數字: ')
 	num = int(num)
 	count += 1 # 就是count = count + 1
 	if num == r:
